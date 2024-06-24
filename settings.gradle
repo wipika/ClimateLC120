@@ -12,6 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "LX470climate"
+rootProject.name = "LC120Climate"
 
 include ':climate', ':fytcanbusmonitor'
