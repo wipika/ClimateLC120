@@ -38,7 +38,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/btnTempPlus"
+                android:id="@+id/btnTempPlus_DRV"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -49,20 +49,19 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/img_temp_plus" />
 
-            <ImageButton
-                android:id="@+id/btnAuto"
+            <TextView
+                android:id="@+id/txtTemperature_DRV"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="false"
-                android:background="#00FFFFFF"
-                android:contentDescription="Auto"
-                android:cropToPadding="false"
-                android:scaleType="centerInside"
-                android:src="@drawable/img_auto" />
+                android:layout_weight="1.5"
+                android:fontFamily="@font/lato"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="72"
+                android:textColor="@color/white"
+                android:textSize="48sp" />
 
             <ImageButton
-                android:id="@+id/btnTempMinus"
+                android:id="@+id/btnTempMinus_DRV"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -70,6 +69,7 @@
                 android:contentDescription="Temp Down"
                 android:scaleType="centerInside"
                 android:src="@drawable/img_temp_minus" />
+
         </LinearLayout>
 
         <TableLayout
@@ -106,26 +106,17 @@
                         android:textColor="@color/white"
                         android:textSize="24sp" />
 
-                    <TextView
-                        android:id="@+id/txtTemperature"
+                    <ImageButton
+                        android:id="@+id/btnFanMinus"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1.5"
-                        android:fontFamily="@font/lato"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:text="72"
-                        android:textColor="@color/white"
-                        android:textSize="48sp" />
-
-                    <TextView
-                        android:id="@+id/lblTemperature"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="2.2"
-                        android:fontFamily="@font/lato"
-                        android:text="Temperature"
-                        android:textAlignment="center"
-                        android:textColor="@color/white" />
+                        android:layout_height="97dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="false"
+                        android:background="#00151515"
+                        android:contentDescription="Fan Down"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/img_fan_minus" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -204,6 +195,18 @@
                         android:scaleX="1"
                         android:scaleY="1"
                         app:srcCompat="@drawable/imgbtn_defrost" />
+
+                    <ImageButton
+                        android:id="@+id/btnFanOff"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="false"
+                        android:background="#00151515"
+                        android:contentDescription="Off"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/img_off" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -242,6 +245,18 @@
                         android:scaleX="1"
                         android:scaleY="1"
                         app:srcCompat="@drawable/imgbtn_ac" />
+
+                    <ImageButton
+                        android:id="@+id/btnAuto"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="false"
+                        android:background="#00FFFFFF"
+                        android:contentDescription="Auto"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/img_auto" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -286,6 +301,17 @@
                         android:scaleX="1"
                         android:scaleY="1"
                         app:srcCompat="@drawable/imgbtn_recirc" />
+
+                    <TextView
+                        android:id="@+id/txtFanSpeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.5"
+                        android:fontFamily="@font/lato"
+                        android:gravity="center|center_horizontal"
+                        android:text="5"
+                        android:textColor="@color/white"
+                        android:textSize="48sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -301,17 +327,6 @@
                         android:layout_weight="2.2" />
 
                     <TextView
-                        android:id="@+id/txtFanSpeed"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1.5"
-                        android:fontFamily="@font/lato"
-                        android:gravity="center|center_horizontal"
-                        android:text="5"
-                        android:textColor="@color/white"
-                        android:textSize="48sp" />
-
-                    <TextView
                         android:id="@+id/lblFanSpeed"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -320,6 +335,18 @@
                         android:text="Fan Speed"
                         android:textAlignment="center"
                         android:textColor="@color/white" />
+
+                    <ImageButton
+                        android:id="@+id/btnFanPlus"
+                        android:layout_width="match_parent"
+                        android:layout_height="91dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="false"
+                        android:background="#00151515"
+                        android:contentDescription="Fan Up"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/img_fan_plus" />
                 </LinearLayout>
 
                 <Space
@@ -337,40 +364,37 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/btnFanPlus"
+                android:id="@+id/btnTempPlus_PASS"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="false"
-                android:background="#00151515"
-                android:contentDescription="Fan Up"
+                android:background="#00FFFFFF"
+                android:contentDescription="Temp Up"
                 android:cropToPadding="false"
                 android:scaleType="centerInside"
-                android:src="@drawable/img_fan_plus" />
+                android:src="@drawable/img_temp_plus" />
+
+            <TextView
+                android:id="@+id/txtTemperature_DRV2"
+                android:layout_width="match_parent"
+                android:layout_height="219dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/lato"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="72"
+                android:textColor="@color/white"
+                android:textSize="48sp" />
 
             <ImageButton
-                android:id="@+id/btnFanOff"
+                android:id="@+id/btnTempMinus_PASS"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:adjustViewBounds="false"
-                android:background="#00151515"
-                android:contentDescription="Off"
-                android:cropToPadding="false"
+                android:background="#00FFFFFF"
+                android:contentDescription="Temp Down"
                 android:scaleType="centerInside"
-                android:src="@drawable/img_off" />
-
-            <ImageButton
-                android:id="@+id/btnFanMinus"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="false"
-                android:background="#00151515"
-                android:contentDescription="Fan Down"
-                android:cropToPadding="false"
-                android:scaleType="centerInside"
-                android:src="@drawable/img_fan_minus" />
+                android:src="@drawable/img_temp_minus" />
 
         </LinearLayout>
 

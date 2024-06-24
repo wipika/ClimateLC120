@@ -35,8 +35,12 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<ImageButton>(R.id.btnTempPlus).setOnTouchListener(this)
-        findViewById<ImageButton>(R.id.btnTempMinus).setOnTouchListener(this)
+        findViewById<ImageButton>(R.id.btnTempPlus_DRV).setOnTouchListener(this)
+        findViewById<ImageButton>(R.id.btnTempMinus_DRV).setOnTouchListener(this)
+        //@con Passenger Temp Up/Down
+        findViewById<ImageButton>(R.id.btnTempPlus_PASS).setOnTouchListener(this)
+        findViewById<ImageButton>(R.id.btnTempMinus_PASS).setOnTouchListener(this)
+        //
         findViewById<ImageButton>(R.id.btnAuto).setOnTouchListener(this)
         findViewById<ImageButton>(R.id.btnVent).setOnTouchListener(this)
         findViewById<ImageButton>(R.id.btnRecirc).setOnTouchListener(this)
@@ -178,6 +182,7 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener {
                 )
             }
             when (updateCode) {
+                // Driver side temp
                 11 -> {
                     val newTemp = intArray?.get(0)
                     val txtTemperature = findViewById<TextView>(R.id.txtTemperature)
@@ -192,6 +197,8 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener {
                         }
                     }
                 }
+
+                // Auto mode on
                 4 -> {
                     val autoOn = intArray?.get(0)
                     findViewById<TextView>(R.id.lblAuto).visibility =
